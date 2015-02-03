@@ -1,0 +1,166 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:300);
+@font-face {
+    font-family: 'ashby_lightregular';
+    src: url('fonts/ashby_light/ashbl___-webfont.eot');
+    src: url('fonts/ashby_light/ashbl___-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/ashby_light/ashbl___-webfont.woff2') format('woff2'), url('fonts/ashby_light/ashbl___-webfont.woff') format('woff'), url('fonts/ashby_light/ashbl___-webfont.ttf') format('truetype'), url('fonts/ashby_light/ashbl___-webfont.svg#ashby_lightregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+body {
+    -webkit-overflow-scrolling: touch;
+    overflow-y: auto;
+    font-size: 150%;
+    line-height: 1.625;
+    font-family: 'Roboto', Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+/* Parallax base styles
+  --------------------------------------------- */
+
+.parallax {
+    height: 500px;
+    /* fallback for older browsers */
+
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-perspective: 300px;
+    perspective: 300px;
+}
+.parallax__group .title {
+    font-size: 300%;
+    font-family: 'ashby_lightregular', Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+.parallax__group .body {
+    margin-top: 7%;
+    max-width: 900px;
+    height: 80%;
+    margin-right: auto;
+    margin-left: auto;
+}
+.parallax__group {
+    position: relative;
+    height: 500px;
+    /* fallback for older browsers */
+
+    height: 100vh;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+.parallax__layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.parallax__layer--fore {
+    -webkit-transform: translateZ(90px) scale(.7);
+    transform: translateZ(90px) scale(.7);
+    z-index: 1;
+}
+.parallax__layer--base {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    z-index: 4;
+}
+.parallax__layer--back {
+    -webkit-transform: translateZ(-300px) scale(2);
+    transform: translateZ(-300px) scale(2);
+    z-index: 3;
+}
+.parallax__layer--deep {
+    -webkit-transform: translateZ(-600px) scale(3);
+    transform: translateZ(-600px) scale(3);
+    z-index: 2;
+}
+/* style the groups
+  --------------------------------------------- */
+
+#group1 {
+    z-index: 5;
+    /* slide over group 2 */
+}
+#group1 .parallax__layer--base {
+    background: rgb(122, 162, 163) url(../images/face1.png) no-repeat 50% 50%;
+    background-size: cover;
+    /*    -webkit-filter: blur(3px);
+    -moz-filter: blur(3px);
+    -o-filter: blur(3px);
+    -ms-filter: blur(3px);
+    filter: blur(3px);*/
+}
+#group2 {
+    z-index: 3;
+    /* slide under groups 1 and 3 */
+}
+#group2 .parallax__layer--back {
+    background: rgb(193, 204, 218) url(../images/face2.png) no-repeat 50% 50%;
+    background-size: cover;
+    /*    -webkit-filter: blur(3px);
+    -moz-filter: blur(3px);
+    -o-filter: blur(3px);
+    -ms-filter: blur(3px);
+    filter: blur(3px);*/
+}
+#group3 {
+    z-index: 4;
+    /* slide over group 2 and 4 */
+}
+#group3 .parallax__layer--base {
+    background: rgba(184, 220, 222, 1) url(../images/face3.png) no-repeat 50% 50%;
+    background-size: cover;
+    /*  -webkit-filter: blur(3px);
+    -moz-filter: blur(3px);
+    -o-filter: blur(3px);
+    -ms-filter: blur(3px);
+    filter: blur(3px);*/
+}
+#group4 {
+    z-index: 2;
+    /* slide under group 3 and 5 */
+}
+#group4 .parallax__layer--deep {
+    background: rgb(111, 152, 173) url(../images/face4.png) no-repeat 50% 50%;
+    background-size: cover;
+    /*    -webkit-filter: blur(3px);
+    -moz-filter: blur(3px);
+    -o-filter: blur(3px);
+    -ms-filter: blur(3px);
+    filter: blur(3px);*/
+}
+#group5 {
+    z-index: 3;
+    /* slide over group 4 and 6 */
+}
+#group5 .parallax__layer--base {
+    background: #B8DCDE;
+    background: rgba(184, 220, 222, 1);
+    /*    -webkit-filter: blur(3px);
+    -moz-filter: blur(3px);
+    -o-filter: blur(3px);
+    -ms-filter: blur(3px);
+    filter: blur(3px);*/
+}
+/* styles
+  --------------------------------------------- */
+
+.logo {
+    margin-right: auto;
+    margin-left: 40%;
+    left: 0;
+    width: 20%;
+    position: absolute;
+    bottom: 20%;
+    border-radius: 180px;
+    box-shadow: 0px 0px 20px rgba(184, 220, 222, 1);
+}
+.footer {
+    font-family: 'ashby_lightregular', Helvetica Neue, Helvetica, Arial, sans-serif;
+}
