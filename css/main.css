@@ -41,6 +41,8 @@ body {
     height: 80%;
     margin-right: auto;
     margin-left: auto;
+    position: relative;
+    z-index: 999;
 }
 .parallax__group {
     position: relative;
