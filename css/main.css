@@ -14,8 +14,6 @@ html, body {
     overflow: hidden;
 }
 body {
-    -webkit-overflow-scrolling: touch;
-    overflow-y: auto;
     font-size: 150%;
     line-height: 1.625;
     font-family: 'Roboto', Helvetica Neue, Helvetica, Arial, sans-serif;
