@@ -195,6 +195,9 @@ body {
         margin-right: auto;
         margin-left: auto;
     }
+    .parallax__group .title {
+        font-size: 200%;
+    }
 }
 
 @media (min-width: 768px) {
