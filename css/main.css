@@ -18,6 +18,14 @@ body {
     line-height: 1.625;
     font-family: 'Roboto', Helvetica Neue, Helvetica, Arial, sans-serif;
 }
+
+@media (max-width: 992px) {
+    body {
+        background: #B8DCDE;
+        background: rgba(184, 220, 222, 1);
+    }
+}
+
 /* Parallax base styles
   --------------------------------------------- */
 
@@ -44,42 +52,47 @@ body {
     position: relative;
     z-index: 999;
 }
-.parallax__group {
-    position: relative;
-    height: 500px;
-    /* fallback for older browsers */
 
-    height: 100vh;
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
+@media (min-width: 992px) {
+    .parallax__group {
+        position: relative;
+
+        height: 500px;
+        /* fallback for older browsers */
+
+        height: 100vh;
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+    }
+    .parallax__layer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+    .parallax__layer--fore {
+        -webkit-transform: translateZ(90px) scale(.7);
+        transform: translateZ(90px) scale(.7);
+        z-index: 1;
+    }
+    .parallax__layer--base {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        z-index: 4;
+    }
+    .parallax__layer--back {
+        -webkit-transform: translateZ(-300px) scale(2);
+        transform: translateZ(-300px) scale(2);
+        z-index: 3;
+    }
+    .parallax__layer--deep {
+        -webkit-transform: translateZ(-600px) scale(3);
+        transform: translateZ(-600px) scale(3);
+        z-index: 2;
+    }
 }
-.parallax__layer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-}
-.parallax__layer--fore {
-    -webkit-transform: translateZ(90px) scale(.7);
-    transform: translateZ(90px) scale(.7);
-    z-index: 1;
-}
-.parallax__layer--base {
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-    z-index: 4;
-}
-.parallax__layer--back {
-    -webkit-transform: translateZ(-300px) scale(2);
-    transform: translateZ(-300px) scale(2);
-    z-index: 3;
-}
-.parallax__layer--deep {
-    -webkit-transform: translateZ(-600px) scale(3);
-    transform: translateZ(-600px) scale(3);
-    z-index: 2;
-}
+
 /* style the groups
   --------------------------------------------- */
 
@@ -96,58 +109,63 @@ body {
     -ms-filter: blur(3px);
     filter: blur(3px);*/
 }
-#group2 {
-    z-index: 3;
-    /* slide under groups 1 and 3 */
+
+@media (min-width: 992px) {
+
+    #group2 {
+        z-index: 3;
+        /* slide under groups 1 and 3 */
+    }
+    #group2 .parallax__layer--back {
+        background: rgb(193, 204, 218) url(../images/face2.png) no-repeat 50% 50%;
+        background-size: cover;
+        /*    -webkit-filter: blur(3px);
+        -moz-filter: blur(3px);
+        -o-filter: blur(3px);
+        -ms-filter: blur(3px);
+        filter: blur(3px);*/
+    }
+    #group3 {
+        z-index: 4;
+        /* slide over group 2 and 4 */
+    }
+    #group3 .parallax__layer--base {
+        background: rgba(184, 220, 222, 1) url(../images/face3.png) no-repeat 50% 50%;
+        background-size: cover;
+        /*  -webkit-filter: blur(3px);
+        -moz-filter: blur(3px);
+        -o-filter: blur(3px);
+        -ms-filter: blur(3px);
+        filter: blur(3px);*/
+    }
+    #group4 {
+        z-index: 2;
+        /* slide under group 3 and 5 */
+    }
+    #group4 .parallax__layer--deep {
+        background: rgb(111, 152, 173) url(../images/face4.png) no-repeat 50% 50%;
+        background-size: cover;
+        /*    -webkit-filter: blur(3px);
+        -moz-filter: blur(3px);
+        -o-filter: blur(3px);
+        -ms-filter: blur(3px);
+        filter: blur(3px);*/
+    }
+    #group5 {
+        z-index: 3;
+        /* slide over group 4 and 6 */
+    }
+    #group5 .parallax__layer--base {
+        background: #B8DCDE;
+        background: rgba(184, 220, 222, 1);
+        /*    -webkit-filter: blur(3px);
+        -moz-filter: blur(3px);
+        -o-filter: blur(3px);
+        -ms-filter: blur(3px);
+        filter: blur(3px);*/
+    }
 }
-#group2 .parallax__layer--back {
-    background: rgb(193, 204, 218) url(../images/face2.png) no-repeat 50% 50%;
-    background-size: cover;
-    /*    -webkit-filter: blur(3px);
-    -moz-filter: blur(3px);
-    -o-filter: blur(3px);
-    -ms-filter: blur(3px);
-    filter: blur(3px);*/
-}
-#group3 {
-    z-index: 4;
-    /* slide over group 2 and 4 */
-}
-#group3 .parallax__layer--base {
-    background: rgba(184, 220, 222, 1) url(../images/face3.png) no-repeat 50% 50%;
-    background-size: cover;
-    /*  -webkit-filter: blur(3px);
-    -moz-filter: blur(3px);
-    -o-filter: blur(3px);
-    -ms-filter: blur(3px);
-    filter: blur(3px);*/
-}
-#group4 {
-    z-index: 2;
-    /* slide under group 3 and 5 */
-}
-#group4 .parallax__layer--deep {
-    background: rgb(111, 152, 173) url(../images/face4.png) no-repeat 50% 50%;
-    background-size: cover;
-    /*    -webkit-filter: blur(3px);
-    -moz-filter: blur(3px);
-    -o-filter: blur(3px);
-    -ms-filter: blur(3px);
-    filter: blur(3px);*/
-}
-#group5 {
-    z-index: 3;
-    /* slide over group 4 and 6 */
-}
-#group5 .parallax__layer--base {
-    background: #B8DCDE;
-    background: rgba(184, 220, 222, 1);
-    /*    -webkit-filter: blur(3px);
-    -moz-filter: blur(3px);
-    -o-filter: blur(3px);
-    -ms-filter: blur(3px);
-    filter: blur(3px);*/
-}
+
 /* styles
   --------------------------------------------- */
 
@@ -161,6 +179,22 @@ body {
     border-radius: 180px;
     box-shadow: 0px 0px 20px rgba(184, 220, 222, 1);
 }
+@media (max-width: 768px) {
+    .masthead {
+        width: 80%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+
+@media (min-width: 768px) {
+    .masthead {
+        width: 40%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+
 .footer {
     font-family: 'ashby_lightregular', Helvetica Neue, Helvetica, Arial, sans-serif;
 }
